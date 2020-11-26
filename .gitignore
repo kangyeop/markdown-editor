@@ -1,0 +1,11 @@
+package-lock.json
+
+dist
+dist/*
+
+build
+build/*
+
+node_modules
+
+yarn.lock
