@@ -1,1 +1,3 @@
-console.log("work");
+import { test } from "./test";
+
+test();
