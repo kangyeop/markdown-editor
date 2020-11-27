@@ -1,3 +1,1 @@
-import { test } from "./test";
-
-test();
+import normalize from "./normalize"
