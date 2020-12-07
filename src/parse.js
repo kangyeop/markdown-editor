@@ -10,6 +10,16 @@ export const parseBlock = (line) => {
     return { name: Paragraph.name, tag: Paragraph.parse(line) };
 };
 
+export const parseInline = (token) => {
+    for (const i in rulesInline) {
+        if (rulesInline[i].rule.test(token.tag)) {
+            const newHtml = rulesInline[i].parse(token.tag);
+            token.tag = newHtml;
+        }
+    }
+    return token;
+};
+
 export const tokenize = (lines) => {
     let tokens = lines.map((line) => parseBlock(line));
     tokens = tokens.map((token, i, arr) => {
@@ -50,5 +60,6 @@ export const tokenize = (lines) => {
         return token;
     });
 
+    tokens.forEach((token) => parseInline(token));
     return tokens;
 };
