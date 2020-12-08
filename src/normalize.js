@@ -3,5 +3,5 @@ export const normalize = (text) => {
 
     const inputLines = text.replace(tooManyNewLine, "\n").split("\n");
 
-    console.log(inputLines);
+    return inputLines;
 };

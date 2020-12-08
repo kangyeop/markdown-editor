@@ -1,6 +1,13 @@
 import { normalize } from "./normalize";
+import { tokenize } from "./tokenize";
 
 document.querySelector("#editor").addEventListener("keyup", () => {
     const { value } = document.querySelector("#editor");
-    normalize(value);
+    conversion(value);
 });
+
+const conversion = (value) => {
+    const lines = normalize(value);
+    const tokens = tokenize(lines);
+    console.log(tokens);
+};
