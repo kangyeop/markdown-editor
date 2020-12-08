@@ -1,12 +1,12 @@
 import { normalize } from "./normalize";
-import { tokenize } from "./parse";
+import { tokenize } from "./tokenize";
 
 document.querySelector("#editor").addEventListener("keyup", () => {
     const { value } = document.querySelector("#editor");
-    parse(value);
+    conversion(value);
 });
 
-const parse = (value) => {
+const conversion = (value) => {
     const lines = normalize(value);
     const tokens = tokenize(lines);
     console.log(tokens);
