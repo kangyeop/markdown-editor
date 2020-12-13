@@ -38,6 +38,7 @@ export const renderer = (tokens) => {
     let index = 1;
     let boxContainer = getBoxContainer(index);
     boxContainer.innerHTML = "";
+    let htmlTag = "";
     tokens.map((data) => {
         if (data.tag === "<hr/>") {
             index++;
@@ -45,7 +46,8 @@ export const renderer = (tokens) => {
             boxContainer = getBoxContainer(index);
             boxContainer.innerHTML = "";
         } else {
-            boxContainer.innerHTML += data.tag;
+            htmlTag += data.tag;
         }
     });
+    boxContainer.innerHTML = htmlTag;
 };

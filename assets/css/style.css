@@ -61,5 +61,10 @@ textarea:focus {
 
 .inner-div {
     font-size: 29px;
-    padding: 20px;
+    padding: 20px !important;
+}
+
+ol,
+ul {
+    list-style-position: inside;
 }
