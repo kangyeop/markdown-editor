@@ -42,6 +42,8 @@ export const renderer = (tokens) => {
     tokens.map((data) => {
         if (data.tag === "<hr/>") {
             index++;
+            boxContainer.innerHTML = htmlTag;
+            htmlTag = "";
             createDiv(index);
             boxContainer = getBoxContainer(index);
             boxContainer.innerHTML = "";
