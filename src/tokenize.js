@@ -24,7 +24,6 @@ export const tokenize = (lines) => {
     return lines
         .map((line) => parseBlock(line))
         .map((token, i, arr) => {
-            console.log(arr);
             if (
                 token.name === "OrderedList" &&
                 (!i || (i - 1 >= 0 && arr[i - 1].name !== "OrderedList"))

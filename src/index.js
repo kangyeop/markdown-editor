@@ -10,6 +10,5 @@ document.querySelector("#editor").addEventListener("keyup", () => {
 const conversion = (value) => {
     const lines = normalize(value);
     const tokens = tokenize(lines);
-    console.log(tokens);
     renderer(tokens);
 };
