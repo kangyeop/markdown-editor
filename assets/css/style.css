@@ -30,19 +30,15 @@
 }
 
 #container {
-    position: absolute;
-    right: 0;
-    top: 50px;
-    bottom: 0;
-    left: 0;
     background-color: #f8f8f8;
     display: flex;
-    z-index: 0;
 }
 
 .box {
     flex: 1;
     padding: 20px;
+    height: calc(100vh - 90px);
+    overflow: scroll;
 }
 
 textarea {
@@ -65,5 +61,10 @@ textarea:focus {
 
 .inner-div {
     font-size: 29px;
-    padding: 20px;
+    padding: 20px !important;
+}
+
+ol,
+ul {
+    list-style-position: inside;
 }

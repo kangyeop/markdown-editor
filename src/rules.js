@@ -1,7 +1,10 @@
 export const Paragraph = {
     name: "Paragraph",
     rule: /(.*)/,
-    parse: (line) => line.replace(Paragraph.rule, "<p>$1</p>"),
+    parse: (line) =>
+        line.replace(Paragraph.rule, (data) => {
+            return data ? `<p>${data}</p>` : "<br>";
+        }),
 };
 
 const Heading = {
