@@ -1,28 +1,31 @@
 {
-  "name": "markdown-editor",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "build:dev": "webpack --mode development",
-    "serve:dev": "webpack-dev-server",
-    "test": "jest"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kangyeop/markdown-editor.git"
-  },
-  "author": "kangyeop",
-  "license": "ISC",
-  "devDependencies": {
-    "html-webpack-plugin": "^4.5.0",
-    "jest": "^26.6.3",
-    "webpack": "^5.5.0",
-    "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0"
-  },
-  "bugs": {
-    "url": "https://github.com/kangyeop/markdown-editor/issues"
-  },
-  "homepage": "https://github.com/kangyeop/markdown-editor#readme"
+    "name": "markdown-editor",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build:dev": "webpack --mode development",
+        "serve:dev": "webpack-dev-server",
+        "test": "jest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kangyeop/markdown-editor.git"
+    },
+    "author": "kangyeop",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/core": "^7.12.10",
+        "@babel/preset-env": "^7.12.11",
+        "babel-jest": "^26.6.3",
+        "html-webpack-plugin": "^4.5.0",
+        "jest": "^26.6.3",
+        "webpack": "^5.5.0",
+        "webpack-cli": "^3.3.12",
+        "webpack-dev-server": "^3.11.0"
+    },
+    "bugs": {
+        "url": "https://github.com/kangyeop/markdown-editor/issues"
+    },
+    "homepage": "https://github.com/kangyeop/markdown-editor#readme"
 }
