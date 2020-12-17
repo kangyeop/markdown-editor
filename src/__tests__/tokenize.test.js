@@ -1,4 +1,4 @@
-import { tokenize, parseBlock, parseInline } from "../src/tokenize";
+import { tokenize, parseBlock, parseInline } from "../tokenize";
 
 // const rulesBlock = [UnorderedList, OrderedList, Hr, Heading, Blockquote];
 

@@ -1,4 +1,4 @@
-import { normalize } from "../src/normalize";
+import { normalize } from "../normalize";
 
 test("Make array slice based on line break", () => {
     const text = `test\ntest\ntest`;
