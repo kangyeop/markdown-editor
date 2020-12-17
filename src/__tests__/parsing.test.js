@@ -1,4 +1,4 @@
-import { tokenize, parseBlock, parseInline } from "../tokenize";
+import { parseBlock, parseInline } from "../tokenize";
 
 // const rulesBlock = [UnorderedList, OrderedList, Hr, Heading, Blockquote];
 
@@ -90,4 +90,44 @@ test("Parsing Blockquote Block", () => {
                 : "<blockquote>test</blockquote>"
         );
     });
+});
+
+// const rulesInline = [Strong, Em, Strike, Img, Link];
+
+test("Parsing Strong Inline", () => {
+    const str = "**test**";
+
+    expect(parseInline(parseBlock(str)).tag).toEqual(
+        "<p><strong>test</strong></p>"
+    );
+});
+
+test("Parsing Em Inline", () => {
+    const str = "*test*";
+
+    expect(parseInline(parseBlock(str)).tag).toEqual("<p><em>test</em></p>");
+});
+
+test("Parsing Strike Inline", () => {
+    const str = "~~test~~";
+
+    expect(parseInline(parseBlock(str)).tag).toEqual(
+        "<p><strike>test</strike></p>"
+    );
+});
+
+test("Parsing Img Inline", () => {
+    const str = "Image test ![screenshot_test](test.png)";
+
+    expect(parseInline(parseBlock(str)).tag).toEqual(
+        '<p>Image test <img src="test.png" alt="screenshot_test" /></p>'
+    );
+});
+
+test("Parsing Link Inline", () => {
+    const str = "Link test [Google](https://google.co.kr)";
+
+    expect(parseInline(parseBlock(str)).tag).toEqual(
+        '<p>Link test <a href="https://google.co.kr">Google</a></p>'
+    );
 });
