@@ -45,51 +45,26 @@ test("Parsing OrderedList Block", () => {
         "8. test",
         "9. test",
         "0. test",
-        "1.", // 띄어쓰기가 있지 않음
     ];
 
-    strArray.forEach((data, index) => {
-        expect(parseBlock(data).name).toEqual(
-            index === strArray.length - 1 ? "Paragraph" : "OrderedList"
-        );
-        expect(parseBlock(data).tag).toEqual(
-            index === strArray.length - 1 ? "<p>1.</p>" : "<li>test</li>"
-        );
+    strArray.forEach((data) => {
+        expect(parseBlock(data).name).toEqual("OrderedList");
+        expect(parseBlock(data).tag).toEqual("<li>test</li>");
     });
 });
 
 test("Parsing UnorderedList Block", () => {
-    const strArray = [
-        "- test",
-        "-", // 띄어쓰기가 있지 않음
-    ];
+    const data = "- test";
 
-    strArray.forEach((data, index) => {
-        expect(parseBlock(data).name).toEqual(
-            index === strArray.length - 1 ? "Paragraph" : "UnorderedList"
-        );
-        expect(parseBlock(data).tag).toEqual(
-            index === strArray.length - 1 ? "<p>-</p>" : "<li>test</li>"
-        );
-    });
+    expect(parseBlock(data).name).toEqual("UnorderedList");
+    expect(parseBlock(data).tag).toEqual("<li>test</li>");
 });
 
 test("Parsing Blockquote Block", () => {
-    const strArray = [
-        "> test",
-        ">", // 띄어쓰기가 있지 않음
-    ];
+    const data = "> test";
 
-    strArray.forEach((data, index) => {
-        expect(parseBlock(data).name).toEqual(
-            index === strArray.length - 1 ? "Paragraph" : "Blockquote"
-        );
-        expect(parseBlock(data).tag).toEqual(
-            index === strArray.length - 1
-                ? "<p>></p>"
-                : "<blockquote>test</blockquote>"
-        );
-    });
+    expect(parseBlock(data).name).toEqual("Blockquote");
+    expect(parseBlock(data).tag).toEqual("<blockquote>test</blockquote>");
 });
 
 // const rulesInline = [Strong, Em, Strike, Img, Link];
