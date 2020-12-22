@@ -1,9 +1,10 @@
 import { normalize } from "../normalize";
 
 test("Make array slice based on line break", () => {
-    const text = `test\ntest\ntest`;
-    const textArray = ["test", "test", "test"];
+    // 줄이 1줄일때, 2줄일때, 3줄 이상일 때
+    const testArray = ["test", `test\ntest`, `test\ntest\n`];
 
-    expect(normalize(text).length).toBe(3);
-    expect(normalize(text)).toEqual(textArray);
+    testArray.forEach((text, index) => {
+        expect(normalize(text).length).toBe(index + 1);
+    });
 });
